@@ -1,4 +1,5 @@
 # Complex Arithmetic Logic Unit
+![Alt text](output_files/CALU.jpeg)
 ```bash
 --------------------------
 ALU for Complex Arhitmetic |
@@ -40,8 +41,4 @@ FLAGS:
 	CI : Carry form the imaginary part
 
 ```
-
-![Alt text](output_files/CALU.jpeg)
-
-
 
