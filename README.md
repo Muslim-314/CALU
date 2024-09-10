@@ -1,7 +1,8 @@
 # Complex Arithmetic Logic Unit
 ```bash
-ALU for Complex Arhitmetic|
----------------------------------
+--------------------------
+ALU for Complex Arhitmetic |
+--------------------------
 ISA: 
 1	Add        DONE
 2	Multiply   DONE
@@ -22,9 +23,10 @@ ISA:
 16	Check if A magnitude is greater than B magnitude
 
 Instruction format:
-	   Real Part       Imaginary part   Opcode
-Z1  =	xxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxx   xxxx
-Z2  =   xxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxx   
+		    Opearand-1                                Opearand-1
+	    Real Part       Imaginary part            Real Part       Imaginary part        Opcode
+	   xxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxx        xxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxx       xxxx
+  
 FLAGS:
 	ZR : Zero real part 
 	ZI : Zero imaginary part
