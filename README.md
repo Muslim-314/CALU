@@ -41,7 +41,7 @@ FLAGS:
 
 ```
 
-![Alt text](output_files/CALU)
+![Alt text](output_files/CALU.jpeg)
 
 
 
