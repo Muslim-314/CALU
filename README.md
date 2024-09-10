@@ -18,6 +18,14 @@
 16. Swap the real and imaginary parts of complex numbers  
 17. Check if A magnitude is greater than B magnitude  
 ---
+###Instruction Format
+|           | Operand 1       | Operand 2       |         |
+|-----------|-----------------|-----------------|---------|
+| **Part**  | Real   | Imaginary | Real   | Imaginary | Opcode |
+| **No. of bits** | 16     | 16        | 16     | 16        | 4      |
+
+
+
 
 ### FLAGS
 
