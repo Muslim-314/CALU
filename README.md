@@ -1,5 +1,5 @@
 # Complex Arithmetic Logic Unit
-
+### ISA
 1. **Add** (DONE)  
 2. **Multiply** (DONE)  
 3. **Subtract** (DONE)  
