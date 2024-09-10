@@ -1,0 +1,32 @@
+module sqrt_16bit (
+    input [15:0] num,  // 16-bit input number
+    output reg [15:0] sqrt_out // 16-bit square root output
+);
+    reg [31:0] a;
+    reg [15:0] q;
+    reg [17:0] left, right, r;
+    integer i;
+
+    always @(*) begin
+        // Initialize all the variables
+        a = {num, 16'b0}; // Extend input to 32 bits by shifting it left by 16 bits
+        q = 0;
+        left = 0;
+        right = 0;
+        r = 0;
+
+        // Run the calculations for 16 iterations
+        for(i = 0; i < 16; i = i + 1) begin
+            right = {q, r[17], 1'b1};
+            left = {r[15:0], a[31:30]};
+            a = {a[29:0], 2'b00}; // Left shift by 2 bits
+            if (r[17] == 1) // Add if r is negative
+                r = left + right;
+            else            // Subtract if r is positive
+                r = left - right;
+            q = {q[14:0], !r[17]};
+        end
+
+        sqrt_out = q; // Final assignment to output
+    end
+endmodule

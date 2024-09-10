@@ -1,0 +1,366 @@
+Analysis & Synthesis report for CALU
+Mon Sep  9 19:54:36 2024
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. General Register Statistics
+ 10. Port Connectivity Checks: "carry_look_ahead_16bit:add16"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Sep  9 19:54:36 2024       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; CALU                                        ;
+; Top-level Entity Name           ; magnitude                                   ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 48                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 2                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; magnitude          ; CALU               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                        ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                          ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
+; carry_look_ahead_16bit.v         ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_16bit.v ;         ;
+; carry_look_ahead_4bit.v          ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_4bit.v  ;         ;
+; singed_multiplier.v              ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/singed_multiplier.v      ;         ;
+; sqrt_16bit.v                     ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/sqrt_16bit.v             ;         ;
+; magnitude.v                      ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/magnitude.v              ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                     ;
++---------------------------------------------+-----------------------------------+
+; Resource                                    ; Usage                             ;
++---------------------------------------------+-----------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 90                                ;
+;                                             ;                                   ;
+; Combinational ALUT usage for logic          ; 175                               ;
+;     -- 7 input functions                    ; 0                                 ;
+;     -- 6 input functions                    ; 5                                 ;
+;     -- 5 input functions                    ; 33                                ;
+;     -- 4 input functions                    ; 24                                ;
+;     -- <=3 input functions                  ; 113                               ;
+;                                             ;                                   ;
+; Dedicated logic registers                   ; 0                                 ;
+;                                             ;                                   ;
+; I/O pins                                    ; 48                                ;
+;                                             ;                                   ;
+; Total DSP Blocks                            ; 2                                 ;
+;                                             ;                                   ;
+; Maximum fan-out node                        ; singed_multiplier:mul2|Product[0] ;
+; Maximum fan-out                             ; 54                                ;
+; Total fan-out                               ; 702                               ;
+; Average fan-out                             ; 2.57                              ;
++---------------------------------------------+-----------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                      ;
++------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                ; Entity Name            ; Library Name ;
++------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------+------------------------+--------------+
+; |magnitude                         ; 175 (0)             ; 0 (0)                     ; 0                 ; 2          ; 48   ; 0            ; |magnitude                                                         ; magnitude              ; work         ;
+;    |carry_look_ahead_16bit:add16|  ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |magnitude|carry_look_ahead_16bit:add16                            ; carry_look_ahead_16bit ; work         ;
+;       |carry_look_ahead_4bit:cla1| ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |magnitude|carry_look_ahead_16bit:add16|carry_look_ahead_4bit:cla1 ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla2| ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |magnitude|carry_look_ahead_16bit:add16|carry_look_ahead_4bit:cla2 ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla3| ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |magnitude|carry_look_ahead_16bit:add16|carry_look_ahead_4bit:cla3 ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla4| ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |magnitude|carry_look_ahead_16bit:add16|carry_look_ahead_4bit:cla4 ; carry_look_ahead_4bit  ; work         ;
+;    |singed_multiplier:mul1|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |magnitude|singed_multiplier:mul1                                  ; singed_multiplier      ; work         ;
+;    |singed_multiplier:mul2|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |magnitude|singed_multiplier:mul2                                  ; singed_multiplier      ; work         ;
+;    |sqrt:sq1|                      ; 139 (139)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |magnitude|sqrt:sq1                                                ; sqrt                   ; work         ;
++------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary ;
++-------------------------------+--------------+
+; Statistic                     ; Number Used  ;
++-------------------------------+--------------+
+; Two Independent 18x18         ; 2            ;
+; Total number of DSP blocks    ; 2            ;
+;                               ;              ;
+; Fixed Point Signed Multiplier ; 2            ;
++-------------------------------+--------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "carry_look_ahead_16bit:add16"                                                                            ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; cin  ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; cout ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 182                         ;
+;     arith             ; 126                         ;
+;         1 data inputs ; 31                          ;
+;         2 data inputs ; 26                          ;
+;         3 data inputs ; 28                          ;
+;         4 data inputs ; 14                          ;
+;         5 data inputs ; 27                          ;
+;     normal            ; 56                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 10                          ;
+;         5 data inputs ; 6                           ;
+;         6 data inputs ; 5                           ;
+; arriav_mac            ; 2                           ;
+; boundary_port         ; 48                          ;
+;                       ;                             ;
+; Max LUT depth         ; 21.00                       ;
+; Average LUT depth     ; 17.26                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Mon Sep  9 19:54:22 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CALU -c CALU
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 0 design units, including 0 entities, in source file CALU.v
+Info (12021): Found 1 design units, including 1 entities, in source file carry_look_ahead_16bit.v
+    Info (12023): Found entity 1: carry_look_ahead_16bit File: /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_16bit.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file carry_look_ahead_4bit.v
+    Info (12023): Found entity 1: carry_look_ahead_4bit File: /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_4bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Testbenches/carry_look_ahead_16bit_tb.v
+    Info (12023): Found entity 1: carry_look_ahead_16bit_tb File: /home/muslim/HDD/Comlpex_ALU/Testbenches/carry_look_ahead_16bit_tb.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file singed_multiplier.v
+    Info (12023): Found entity 1: singed_multiplier File: /home/muslim/HDD/Comlpex_ALU/singed_multiplier.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Testbenches/signed_multiplier_tb.v
+    Info (12023): Found entity 1: signed_multiplier_tb File: /home/muslim/HDD/Comlpex_ALU/Testbenches/signed_multiplier_tb.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Signed_Divider.v
+    Info (12023): Found entity 1: Signed_Divider File: /home/muslim/HDD/Comlpex_ALU/Signed_Divider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Testbenches/tb_signed_restoring_division_16bit.v
+    Info (12023): Found entity 1: Signed_Divider_tb File: /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_signed_restoring_division_16bit.v Line: 1
+Warning (12019): Can't analyze file -- file Testbenches/sqrt_16bit.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file Testbenches/tb_sqrt_16bit.v
+    Info (12023): Found entity 1: tb_sqrt_16bit File: /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_sqrt_16bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sqrt_16bit.v
+    Info (12023): Found entity 1: sqrt File: /home/muslim/HDD/Comlpex_ALU/sqrt_16bit.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file magnitude.v
+    Info (12023): Found entity 1: magnitude File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Testbenches/tb_magnitude.v
+    Info (12023): Found entity 1: tb_magnitude File: /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_magnitude.v Line: 1
+Info (12127): Elaborating entity "magnitude" for the top level hierarchy
+Info (12128): Elaborating entity "singed_multiplier" for hierarchy "singed_multiplier:mul1" File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 11
+Info (12128): Elaborating entity "carry_look_ahead_16bit" for hierarchy "carry_look_ahead_16bit:add16" File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 13
+Info (12128): Elaborating entity "carry_look_ahead_4bit" for hierarchy "carry_look_ahead_16bit:add16|carry_look_ahead_4bit:cla1" File: /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_16bit.v Line: 19
+Info (12128): Elaborating entity "sqrt" for hierarchy "sqrt:sq1" File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 14
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Mag[8]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
+    Warning (13410): Pin "Mag[9]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
+    Warning (13410): Pin "Mag[10]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
+    Warning (13410): Pin "Mag[11]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
+    Warning (13410): Pin "Mag[12]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
+    Warning (13410): Pin "Mag[13]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
+    Warning (13410): Pin "Mag[14]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
+    Warning (13410): Pin "Mag[15]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 225 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 32 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 175 logic cells
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 468 megabytes
+    Info: Processing ended: Mon Sep  9 19:54:36 2024
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:29
+
+

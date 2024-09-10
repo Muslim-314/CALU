@@ -1,0 +1,42 @@
+`timescale 1ns / 1ps
+
+module signed_multiplier_tb;
+
+  // Inputs
+  reg signed [15:0] A;
+  reg signed [15:0] B;
+
+  // Outputs
+  wire signed [15:0] Product;
+
+  // Instantiate the Unit Under Test (UUT)
+  singed_multiplier uut (
+    .A(A), 
+    .B(B), 
+    .Product(Product)
+  );
+
+  // Initialize inputs and monitor the outputs
+  initial begin
+    // Monitor changes in signals
+    $monitor("A = %d, B = %d, Product = %d", A, B, Product);
+
+    // Test cases
+    A = 16'sd10; B = 16'sd3;    // 10 * 3 = 30
+    #10;
+    A = 16'sd-7; B = 16'sd5;    // -7 * 5 = -35
+    #10;
+    A = 16'sd12; B = 16'sd-4;   // 12 * -4 = -48
+    #10;
+    A = 16'sd-9; B = 16'sd-6;   // -9 * -6 = 54
+    #10;
+    A = 16'sd32767; B = 16'sd1; // Test with max positive number
+    #10;
+    A = 16'sd-32768; B = 16'sd1; // Test with max negative number
+    #10;
+    
+    // End the test
+    $finish;
+  end
+
+endmodule

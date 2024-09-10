@@ -1,0 +1,69 @@
+`timescale 1ns / 1ps
+
+module tb_signed_restoring_division_16bit;
+
+    // Inputs
+    reg [15:0] dividend;
+    reg [15:0] divisor;
+
+    // Outputs
+    wire [15:0] quotient;
+    wire [15:0] remainder;
+
+    // Instantiate the Unit Under Test (UUT)
+    Signed_Divider uut (
+        .dividend(dividend),
+        .divisor(divisor),
+        .quotient(quotient),
+        .remainder(remainder)
+    );
+
+    // Test cases
+    initial begin
+        // Test case 1: 20 / 5 = 4 remainder 0
+        dividend = 16'd20;
+        divisor = 16'd5;
+        #10; // wait for 10 time units
+        $display("Test 1: %d / %d = %d remainder %d", dividend, divisor, quotient, remainder);
+
+        // Test case 2: -20 / 5 = -4 remainder 0
+        dividend = -16'd20;
+        divisor = 16'd5;
+        #10;
+        $display("Test 2: %d / %d = %d remainder %d", dividend, divisor, quotient, remainder);
+
+        // Test case 3: 20 / -5 = -4 remainder 0
+        dividend = 16'd20;
+        divisor = -16'd5;
+        #10;
+        $display("Test 3: %d / %d = %d remainder %d", dividend, divisor, quotient, remainder);
+
+        // Test case 4: -20 / -5 = 4 remainder 0
+        dividend = -16'd20;
+        divisor = -16'd5;
+        #10;
+        $display("Test 4: %d / %d = %d remainder %d", dividend, divisor, quotient, remainder);
+
+        // Test case 5: 17 / 4 = 4 remainder 1
+        dividend = 16'd17;
+        divisor = 16'd4;
+        #10;
+        $display("Test 5: %d / %d = %d remainder %d", dividend, divisor, quotient, remainder);
+
+        // Test case 6: -17 / 4 = -4 remainder -1
+        dividend = -16'd17;
+        divisor = 16'd4;
+        #10;
+        $display("Test 6: %d / %d = %d remainder %d", dividend, divisor, quotient, remainder);
+
+        // Test case 7: 17 / -4 = -4 remainder 1
+        dividend = 16'd17;
+        divisor = -16'd4;
+        #10;
+        $display("Test 7: %d / %d = %d remainder %d", dividend, divisor, quotient, remainder);
+
+        // Test case 8: 0 / 7 = 0 remainder 0
+        dividend = 16'd0;
+        divisor = 16'd7;
+        #10;
+        $display("Test 8: %

@@ -1,0 +1,169 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Mag[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Mag[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Mag[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Mag[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Mag[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Mag[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Mag[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Mag[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Imaginary[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Real[15]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

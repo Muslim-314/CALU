@@ -1,0 +1,125 @@
+# do CALU_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying /home/muslim/HDD/Quartus/modelsim_ase/linuxaloem/../modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+/home/muslim/HDD/Comlpex_ALU {/home/muslim/HDD/Comlpex_ALU/carry_look_ahead_16bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:54:47 on Sep 09,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/muslim/HDD/Comlpex_ALU" /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_16bit.v 
+# -- Compiling module carry_look_ahead_16bit
+# 
+# Top level modules:
+# 	carry_look_ahead_16bit
+# End time: 19:54:47 on Sep 09,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/muslim/HDD/Comlpex_ALU {/home/muslim/HDD/Comlpex_ALU/carry_look_ahead_4bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:54:47 on Sep 09,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/muslim/HDD/Comlpex_ALU" /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_4bit.v 
+# -- Compiling module carry_look_ahead_4bit
+# 
+# Top level modules:
+# 	carry_look_ahead_4bit
+# End time: 19:54:48 on Sep 09,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/muslim/HDD/Comlpex_ALU {/home/muslim/HDD/Comlpex_ALU/singed_multiplier.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:54:48 on Sep 09,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/muslim/HDD/Comlpex_ALU" /home/muslim/HDD/Comlpex_ALU/singed_multiplier.v 
+# -- Compiling module singed_multiplier
+# 
+# Top level modules:
+# 	singed_multiplier
+# End time: 19:54:48 on Sep 09,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/muslim/HDD/Comlpex_ALU {/home/muslim/HDD/Comlpex_ALU/sqrt_16bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:54:48 on Sep 09,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/muslim/HDD/Comlpex_ALU" /home/muslim/HDD/Comlpex_ALU/sqrt_16bit.v 
+# -- Compiling module sqrt
+# 
+# Top level modules:
+# 	sqrt
+# End time: 19:54:48 on Sep 09,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/muslim/HDD/Comlpex_ALU {/home/muslim/HDD/Comlpex_ALU/magnitude.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:54:48 on Sep 09,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/muslim/HDD/Comlpex_ALU" /home/muslim/HDD/Comlpex_ALU/magnitude.v 
+# -- Compiling module magnitude
+# 
+# Top level modules:
+# 	magnitude
+# End time: 19:54:48 on Sep 09,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# 
+# stdin: <EOF>
+vlog -reportprogress 300 -work work /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_magnitude.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:55:09 on Sep 09,2024
+# vlog -reportprogress 300 -work work /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_magnitude.v 
+# -- Compiling module tb_magnitude
+# 
+# Top level modules:
+# 	tb_magnitude
+# End time: 19:55:09 on Sep 09,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.tb_magnitude
+# vsim work.tb_magnitude 
+# Start time: 19:55:12 on Sep 09,2024
+# Loading work.tb_magnitude
+# Loading work.magnitude
+# Loading work.singed_multiplier
+# Loading work.carry_look_ahead_16bit
+# Loading work.carry_look_ahead_4bit
+# Loading work.sqrt
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'add16'.  Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_magnitude/uut/add16 File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 13
+# ** Warning: (vsim-3722) /home/muslim/HDD/Comlpex_ALU/magnitude.v(13): [TFMPC] - Missing connection for port 'cout'.
+add wave -position insertpoint sim:/tb_magnitude/*
+run
+# Testing magnitude calculation...
+# Test Case 1: Real =     3, Imaginary =     4, Magnitude =     5
+# Test Case 2: Real =     5, Imaginary =    12, Magnitude =    13
+# Test Case 3: Real =     8, Imaginary =     6, Magnitude =    10
+# Test Case 4: Real =     0, Imaginary =     0, Magnitude =     0
+# Test Case 5: Real = 32767, Imaginary = 32767, Magnitude =     1
+# ** Note: $finish    : /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_magnitude.v(51)
+#    Time: 50 ps  Iteration: 0  Instance: /tb_magnitude
+# 1
+# Break in Module tb_magnitude at /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_magnitude.v line 51
+vsim work.tb_magnitude
+# End time: 19:56:43 on Sep 09,2024, Elapsed time: 0:01:31
+# Errors: 0, Warnings: 2
+# vsim work.tb_magnitude 
+# Start time: 19:56:43 on Sep 09,2024
+# Loading work.tb_magnitude
+# Loading work.magnitude
+# Loading work.singed_multiplier
+# Loading work.carry_look_ahead_16bit
+# Loading work.carry_look_ahead_4bit
+# Loading work.sqrt
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'add16'.  Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_magnitude/uut/add16 File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 13
+# ** Warning: (vsim-3722) /home/muslim/HDD/Comlpex_ALU/magnitude.v(13): [TFMPC] - Missing connection for port 'cout'.
+add wave -position insertpoint sim:/tb_magnitude/uut/*
+run
+# Testing magnitude calculation...
+# Test Case 1: Real =     3, Imaginary =     4, Magnitude =     5
+# Test Case 2: Real =     5, Imaginary =    12, Magnitude =    13
+# Test Case 3: Real =     8, Imaginary =     6, Magnitude =    10
+# Test Case 4: Real =     0, Imaginary =     0, Magnitude =     0
+# Test Case 5: Real = 32767, Imaginary = 32767, Magnitude =     1
+# ** Note: $finish    : /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_magnitude.v(51)
+#    Time: 50 ps  Iteration: 0  Instance: /tb_magnitude
+# 1
+# Break in Module tb_magnitude at /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_magnitude.v line 51
+# End time: 19:58:05 on Sep 09,2024, Elapsed time: 0:01:22
+# Errors: 0, Warnings: 2
