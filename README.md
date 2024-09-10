@@ -4,11 +4,11 @@
 ALU for Complex Arhitmetic |
 --------------------------
 ISA: 
-1	Add        DONE
-2	Multiply   DONE
-3	Subtract   DONE
-4	Divison    DONE
-5	Magnitude  DONE
+1	Add        
+2	Multiply   
+3	Subtract   
+4	Divison    
+5	Magnitude  
 6	AND (real part with real & imaginary with imaginary)
 7	OR
 7	NOT
