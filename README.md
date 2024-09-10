@@ -9,14 +9,14 @@
 7. OR  
 8. NOT  
 9. XOR  
-10.XNOR  
-11.NAND  
-12.NOR  
-13.Increment complex number (R++ and I++)  
-14.Decrement complex number (R-- and I--)  
-15.Find the angle of the complex number  
-16.Swap the real and imaginary parts of complex numbers  
-17.Check if A magnitude is greater than B magnitude  
+10. XNOR  
+11. NAND  
+12. NOR  
+13. Increment complex number (R++ and I++)  
+14. Decrement complex number (R-- and I--)  
+15. Find the angle of the complex number  
+16. Swap the real and imaginary parts of complex numbers  
+17. Check if A magnitude is greater than B magnitude  
 ---
 
 ### FLAGS
