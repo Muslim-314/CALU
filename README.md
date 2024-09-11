@@ -1,4 +1,6 @@
 # Complex Arithmetic Logic Unit
+![Alt text](output_files/instruction_format.jpeg)
+
 ![Alt text](output_files/CALU.jpeg)
 ```bash
 --------------------------
