@@ -5,6 +5,7 @@ Instruction format is described in the following figure. Where `Z1` and `Z2` are
 ![Alt text](output_files/instruction_format.jpeg)
 
 ### CALU Inputs & Outputs
+A Complex Arithmetic Logic Unit (CALU) processes two 32-bit numbers, which are divided into their real and imaginary components for complex arithmetic operations. Based on the results of the ALU, flags are set accordingly. R_Flags and I_Flags are the flags corresponding to the real and imaginary part of the CALU output.
 ![Alt text](output_files/CALU.jpeg)
 
 
@@ -13,11 +14,11 @@ Instruction format is described in the following figure. Where `Z1` and `Z2` are
 ALU for Complex Arhitmetic |
 --------------------------
 ISA: 
-1	Add        
-2	Multiply   
-3	Subtract   
-4	Divison    
-5	Magnitude  
+1	Add 
+2	Multiply 
+3	Subtract 
+4	Divison 
+5	Magnitude 
 6	AND (real part with real & imaginary with imaginary)
 7	OR
 7	NOT
@@ -36,17 +37,16 @@ Instruction format:
 	    Real Part       Imaginary part            Real Part       Imaginary part        Opcode
 	   xxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxx        xxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxx       xxxx
   
-FLAGS:
-	ZR : Zero real part 
-	ZI : Zero imaginary part
-	OR : Overflow in real part 
-	OI : Overflow in imaginary part
-	NR : Negative Real Part
-	NI : Negative imaginary part 
-	ZE : zero diviion error 
-       DVF : Division overflow error
-	CR : carry from the real part
-	CI : Carry form the imaginary part
 
 ```
+### Flags
+
+| **R Flags** | **I Flags** | **Description**               |
+|-------------|-------------|-------------------------------|
+| CR          | CI          | Carry                          |
+| DVFR        | DVFI        | Division overflow error        |
+| ZER         | ZEI         | Zero error                     |
+| ZR          | ZI          | Zero output                    |
+| OR          | OI          | Overflow                       |
+| NR          | NI          | Negative                       |
 

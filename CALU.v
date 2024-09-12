@@ -33,7 +33,7 @@ module CALU(
 	
 	// complex addition and subtraction
 	wire [15:0]realCLAdOut;
-	wire [15;0]imgCLAOut;
+	wire [15:0]imgCLAOut;
 	
 	carry_look_ahead_16bit realAdd(.a(realPart1),.b(realPart2), .cin(Opcode[0]), .sum(realCLAdOut), .cout(CR));
 	carry_look_ahead_16bit  imgAdd(.a(imgPart1 ),.b(imgPart2 ), .cin(Opcode[0]), .sum( imgCLAdOut), .cout(CI));
