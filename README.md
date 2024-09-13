@@ -10,6 +10,31 @@ A Complex Arithmetic Logic Unit (CALU) processes two 32-bit numbers, which are d
 
 ### Instructions
 
+## CALU Instructions Table
+
+| Sr. No. | Opcode | Instruction | Description                                               |
+|---------|--------|-------------|-----------------------------------------------------------|
+| 1       | 0000   | CADD        | Complex addition: Adds the real and imaginary parts of Z1 and Z2. |
+| 2       | 0001   | CSUB        | Complex subtraction: Subtracts the real and imaginary parts of Z2 from Z1. |
+| 3       | 0010   | CMUL        | Complex multiplication: Multiplies Z1 and Z2 in complex space. |
+| 4       | 0011   | CDIV        | Complex division: Divides Z1 by Z2 in complex space.       |
+| 5       | 0100   | CMAG        | Complex magnitude: Computes the magnitude (modulus) of Z1. |
+| 6       | 0101   | CAND        | Complex bitwise AND: Performs bitwise AND on real and imaginary parts. |
+| 7       | 0110   | COR         | Complex bitwise OR: Performs bitwise OR on real and imaginary parts. |
+| 8       | 0111   | CNOT        | Complex bitwise NOT: Performs bitwise NOT on the real and imaginary parts of Z1. |
+| 9       | 1000   | CXOR        | Complex bitwise XOR: Performs bitwise XOR on real and imaginary parts. |
+| 10      | 1001   | CXNOR       | Complex bitwise XNOR: Performs bitwise XNOR on real and imaginary parts. |
+| 11      | 1010   | CNAND       | Complex bitwise NAND: Performs bitwise NAND on real and imaginary parts. |
+| 12      | 1011   | CNOR        | Complex bitwise NOR: Performs bitwise NOR on real and imaginary parts. |
+| 13      | 1100   | CINC        | Complex increment: Increments the real and imaginary parts of Z1 by 1. |
+| 14      | 1101   | CDEC        | Complex decrement: Decrements the real and imaginary parts of Z1 by 1. |
+| 15      | 1110   | Cswap       | Complex swap: Swaps the real and imaginary parts of Z1. |
+| 16      | 1111   | Conjugate   | Complex conjugate: Takes the conjugate of Z1 (negates the imaginary part). |
+
+
+
+
+
 
 ### Flags
 
