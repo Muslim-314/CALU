@@ -8,37 +8,9 @@ Instruction format is described in the following figure. Where `Z1` and `Z2` are
 A Complex Arithmetic Logic Unit (CALU) processes two 32-bit numbers, which are divided into their real and imaginary components for complex arithmetic operations. Based on the results of the ALU, flags are set accordingly. R_Flags and I_Flags are the flags corresponding to the real and imaginary part of the CALU output.
 ![Alt text](output_files/CALU.jpeg)
 
+### Instructions
 
-```bash
---------------------------
-ALU for Complex Arhitmetic |
---------------------------
-ISA: 
-1	Add 
-2	Multiply 
-3	Subtract 
-4	Divison 
-5	Magnitude 
-6	AND (real part with real & imaginary with imaginary)
-7	OR
-7	NOT
-8	XOR
-9	XNOR
-10	NAND
-11	NOR
-12	Increment complex number (R++ and I++)
-13      Decrement complex number(R-- & I--)
-14	Find the angle of the complex number
-15	Swap the real and imaginary parts of complex numbers 
-16	Check if A magnitude is greater than B magnitude
 
-Instruction format:
-		    Opearand-1                                Opearand-1
-	    Real Part       Imaginary part            Real Part       Imaginary part        Opcode
-	   xxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxx        xxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxx       xxxx
-  
-
-```
 ### Flags
 
 | **R Flags** | **I Flags** | **Description**               |
@@ -49,4 +21,10 @@ Instruction format:
 | ZR          | ZI          | Zero output                    |
 | OR          | OI          | Overflow                       |
 | NR          | NI          | Negative                       |
+
+
+
+
+### Results
+![Alt text](output_files/CALU_results.png)
 

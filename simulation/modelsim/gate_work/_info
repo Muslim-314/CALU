@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 d/home/muslim/HDD/Comlpex_ALU/simulation/modelsim
 vsqrt_16bit
-!s110 1725891191
+!s110 1726226352
 !i10b 1
 !s100 ziB7<6IBgm<^VXOO<DczM1
 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -26,7 +26,7 @@ OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1725891191.000000
+!s108 1726226351.000000
 !s107 CALU.vo|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|CALU.vo|
 !i113 1

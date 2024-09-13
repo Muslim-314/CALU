@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at CALU.v(63): object "cSquare" differs only in case from object "csquare" in the same scope File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 63
+Info (10281): Verilog HDL Declaration information at CALU.v(63): object "dSquare" differs only in case from object "dsquare" in the same scope File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 63

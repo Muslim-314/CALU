@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CGXFC7C7F23C8
-set_global_assignment -name TOP_LEVEL_ENTITY magnitude
+set_global_assignment -name TOP_LEVEL_ENTITY CALU
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:53:30  SEPTEMBER 06, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
@@ -67,6 +67,10 @@ set_global_assignment -name VERILOG_FILE Testbenches/tb_sqrt_16bit.v
 set_global_assignment -name VERILOG_FILE sqrt_16bit.v
 set_global_assignment -name VERILOG_FILE magnitude.v
 set_global_assignment -name VERILOG_FILE Testbenches/tb_magnitude.v
+set_global_assignment -name VERILOG_FILE adder_subtractor_16bit_with_overflow.v
+set_global_assignment -name VERILOG_FILE Testbenches/tb_adder_subtractor_16bit_with_overflow.v
+set_global_assignment -name VERILOG_FILE negate_sign.v
+set_global_assignment -name VERILOG_FILE tb_negate_sign.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

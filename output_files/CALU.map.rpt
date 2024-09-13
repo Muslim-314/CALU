@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CALU
-Mon Sep  9 19:54:36 2024
+Fri Sep 13 19:30:51 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -14,11 +14,23 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis DSP Block Usage Summary
-  9. General Register Statistics
- 10. Port Connectivity Checks: "carry_look_ahead_16bit:add16"
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "magnitude:Zmag|carry_look_ahead_16bit:add16"
+ 13. Port Connectivity Checks: "Signed_Divider:divImg"
+ 14. Port Connectivity Checks: "Signed_Divider:divReal"
+ 15. Port Connectivity Checks: "carry_look_ahead_16bit:realPrtdv1"
+ 16. Port Connectivity Checks: "carry_look_ahead_16bit:imgPrtmul0"
+ 17. Port Connectivity Checks: "carry_look_ahead_16bit:realPrtdv"
+ 18. Port Connectivity Checks: "carry_look_ahead_16bit:imgPrtmul"
+ 19. Port Connectivity Checks: "carry_look_ahead_16bit:realPrtmul"
+ 20. Port Connectivity Checks: "adder_subtractor_16bit:ADD_SUB1"
+ 21. Port Connectivity Checks: "adder_subtractor_16bit:ADD_SUB0"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -45,17 +57,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Sep  9 19:54:36 2024       ;
+; Analysis & Synthesis Status     ; Successful - Fri Sep 13 19:30:51 2024       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; CALU                                        ;
-; Top-level Entity Name           ; magnitude                                   ;
+; Top-level Entity Name           ; CALU                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 0                                           ;
-; Total pins                      ; 48                                          ;
+; Total pins                      ; 112                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 2                                           ;
+; Total DSP Blocks                ; 8                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
@@ -71,7 +83,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; magnitude          ; CALU               ;
+; Top-level entity name                                                           ; CALU               ; CALU               ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -161,68 +173,110 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                        ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                          ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
-; carry_look_ahead_16bit.v         ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_16bit.v ;         ;
-; carry_look_ahead_4bit.v          ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_4bit.v  ;         ;
-; singed_multiplier.v              ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/singed_multiplier.v      ;         ;
-; sqrt_16bit.v                     ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/sqrt_16bit.v             ;         ;
-; magnitude.v                      ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/magnitude.v              ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                            ;
++----------------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
+; File Name with User-Entered Path       ; Used in Netlist ; File Type              ; File Name with Absolute Path                                        ; Library ;
++----------------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
+; CALU.v                                 ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/CALU.v                                 ;         ;
+; carry_look_ahead_16bit.v               ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_16bit.v               ;         ;
+; carry_look_ahead_4bit.v                ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_4bit.v                ;         ;
+; singed_multiplier.v                    ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/singed_multiplier.v                    ;         ;
+; Signed_Divider.v                       ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/Signed_Divider.v                       ;         ;
+; sqrt_16bit.v                           ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/sqrt_16bit.v                           ;         ;
+; magnitude.v                            ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/magnitude.v                            ;         ;
+; adder_subtractor_16bit_with_overflow.v ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/adder_subtractor_16bit_with_overflow.v ;         ;
+; negate_sign.v                          ; yes             ; User Verilog HDL File  ; /home/muslim/HDD/Comlpex_ALU/negate_sign.v                          ;         ;
++----------------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                     ;
-+---------------------------------------------+-----------------------------------+
-; Resource                                    ; Usage                             ;
-+---------------------------------------------+-----------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 90                                ;
-;                                             ;                                   ;
-; Combinational ALUT usage for logic          ; 175                               ;
-;     -- 7 input functions                    ; 0                                 ;
-;     -- 6 input functions                    ; 5                                 ;
-;     -- 5 input functions                    ; 33                                ;
-;     -- 4 input functions                    ; 24                                ;
-;     -- <=3 input functions                  ; 113                               ;
-;                                             ;                                   ;
-; Dedicated logic registers                   ; 0                                 ;
-;                                             ;                                   ;
-; I/O pins                                    ; 48                                ;
-;                                             ;                                   ;
-; Total DSP Blocks                            ; 2                                 ;
-;                                             ;                                   ;
-; Maximum fan-out node                        ; singed_multiplier:mul2|Product[0] ;
-; Maximum fan-out                             ; 54                                ;
-; Total fan-out                               ; 702                               ;
-; Average fan-out                             ; 2.57                              ;
-+---------------------------------------------+-----------------------------------+
++-------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                       ;
++---------------------------------------------+---------------------------------------------------------------------+
+; Resource                                    ; Usage                                                               ;
++---------------------------------------------+---------------------------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 1289                                                                ;
+;                                             ;                                                                     ;
+; Combinational ALUT usage for logic          ; 2307                                                                ;
+;     -- 7 input functions                    ; 33                                                                  ;
+;     -- 6 input functions                    ; 237                                                                 ;
+;     -- 5 input functions                    ; 610                                                                 ;
+;     -- 4 input functions                    ; 535                                                                 ;
+;     -- <=3 input functions                  ; 892                                                                 ;
+;                                             ;                                                                     ;
+; Dedicated logic registers                   ; 0                                                                   ;
+;                                             ;                                                                     ;
+; I/O pins                                    ; 112                                                                 ;
+;                                             ;                                                                     ;
+; Total DSP Blocks                            ; 8                                                                   ;
+;                                             ;                                                                     ;
+; Maximum fan-out node                        ; carry_look_ahead_16bit:realPrtdv1|carry_look_ahead_4bit:cla4|sum[3] ;
+; Maximum fan-out                             ; 986                                                                 ;
+; Total fan-out                               ; 10460                                                               ;
+; Average fan-out                             ; 4.12                                                                ;
++---------------------------------------------+---------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                      ;
-+------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------+------------------------+--------------+
-; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                ; Entity Name            ; Library Name ;
-+------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------+------------------------+--------------+
-; |magnitude                         ; 175 (0)             ; 0 (0)                     ; 0                 ; 2          ; 48   ; 0            ; |magnitude                                                         ; magnitude              ; work         ;
-;    |carry_look_ahead_16bit:add16|  ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |magnitude|carry_look_ahead_16bit:add16                            ; carry_look_ahead_16bit ; work         ;
-;       |carry_look_ahead_4bit:cla1| ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |magnitude|carry_look_ahead_16bit:add16|carry_look_ahead_4bit:cla1 ; carry_look_ahead_4bit  ; work         ;
-;       |carry_look_ahead_4bit:cla2| ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |magnitude|carry_look_ahead_16bit:add16|carry_look_ahead_4bit:cla2 ; carry_look_ahead_4bit  ; work         ;
-;       |carry_look_ahead_4bit:cla3| ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |magnitude|carry_look_ahead_16bit:add16|carry_look_ahead_4bit:cla3 ; carry_look_ahead_4bit  ; work         ;
-;       |carry_look_ahead_4bit:cla4| ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |magnitude|carry_look_ahead_16bit:add16|carry_look_ahead_4bit:cla4 ; carry_look_ahead_4bit  ; work         ;
-;    |singed_multiplier:mul1|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |magnitude|singed_multiplier:mul1                                  ; singed_multiplier      ; work         ;
-;    |singed_multiplier:mul2|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |magnitude|singed_multiplier:mul2                                  ; singed_multiplier      ; work         ;
-;    |sqrt:sq1|                      ; 139 (139)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |magnitude|sqrt:sq1                                                ; sqrt                   ; work         ;
-+------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------+------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                    ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                          ; Entity Name            ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------+------------------------+--------------+
+; |CALU                                  ; 2307 (391)          ; 0 (0)                     ; 0                 ; 8          ; 112  ; 0            ; |CALU                                                                        ; CALU                   ; work         ;
+;    |Signed_Divider:divImg|             ; 755 (755)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|Signed_Divider:divImg                                                  ; Signed_Divider         ; work         ;
+;    |Signed_Divider:divReal|            ; 762 (762)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|Signed_Divider:divReal                                                 ; Signed_Divider         ; work         ;
+;    |adder_subtractor_16bit:ADD_SUB0|   ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|adder_subtractor_16bit:ADD_SUB0                                        ; adder_subtractor_16bit ; work         ;
+;    |adder_subtractor_16bit:ADD_SUB1|   ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|adder_subtractor_16bit:ADD_SUB1                                        ; adder_subtractor_16bit ; work         ;
+;    |carry_look_ahead_16bit:imgPrtmul0| ; 40 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:imgPrtmul0                                      ; carry_look_ahead_16bit ; work         ;
+;       |carry_look_ahead_4bit:cla1|     ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:imgPrtmul0|carry_look_ahead_4bit:cla1           ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla2|     ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:imgPrtmul0|carry_look_ahead_4bit:cla2           ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla3|     ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:imgPrtmul0|carry_look_ahead_4bit:cla3           ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla4|     ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:imgPrtmul0|carry_look_ahead_4bit:cla4           ; carry_look_ahead_4bit  ; work         ;
+;    |carry_look_ahead_16bit:imgPrtmul|  ; 24 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:imgPrtmul                                       ; carry_look_ahead_16bit ; work         ;
+;       |carry_look_ahead_4bit:cla1|     ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:imgPrtmul|carry_look_ahead_4bit:cla1            ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla2|     ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:imgPrtmul|carry_look_ahead_4bit:cla2            ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla3|     ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:imgPrtmul|carry_look_ahead_4bit:cla3            ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla4|     ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:imgPrtmul|carry_look_ahead_4bit:cla4            ; carry_look_ahead_4bit  ; work         ;
+;    |carry_look_ahead_16bit:realPrtdv1| ; 56 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:realPrtdv1                                      ; carry_look_ahead_16bit ; work         ;
+;       |carry_look_ahead_4bit:cla1|     ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:realPrtdv1|carry_look_ahead_4bit:cla1           ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla2|     ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:realPrtdv1|carry_look_ahead_4bit:cla2           ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla3|     ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:realPrtdv1|carry_look_ahead_4bit:cla3           ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla4|     ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:realPrtdv1|carry_look_ahead_4bit:cla4           ; carry_look_ahead_4bit  ; work         ;
+;    |carry_look_ahead_16bit:realPrtdv|  ; 40 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:realPrtdv                                       ; carry_look_ahead_16bit ; work         ;
+;       |carry_look_ahead_4bit:cla1|     ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:realPrtdv|carry_look_ahead_4bit:cla1            ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla2|     ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:realPrtdv|carry_look_ahead_4bit:cla2            ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla3|     ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:realPrtdv|carry_look_ahead_4bit:cla3            ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla4|     ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:realPrtdv|carry_look_ahead_4bit:cla4            ; carry_look_ahead_4bit  ; work         ;
+;    |carry_look_ahead_16bit:realPrtmul| ; 24 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:realPrtmul                                      ; carry_look_ahead_16bit ; work         ;
+;       |carry_look_ahead_4bit:cla1|     ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:realPrtmul|carry_look_ahead_4bit:cla1           ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla2|     ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:realPrtmul|carry_look_ahead_4bit:cla2           ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla3|     ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:realPrtmul|carry_look_ahead_4bit:cla3           ; carry_look_ahead_4bit  ; work         ;
+;       |carry_look_ahead_4bit:cla4|     ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|carry_look_ahead_16bit:realPrtmul|carry_look_ahead_4bit:cla4           ; carry_look_ahead_4bit  ; work         ;
+;    |magnitude:Zmag|                    ; 162 (0)             ; 0 (0)                     ; 0                 ; 2          ; 0    ; 0            ; |CALU|magnitude:Zmag                                                         ; magnitude              ; work         ;
+;       |carry_look_ahead_16bit:add16|   ; 23 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|magnitude:Zmag|carry_look_ahead_16bit:add16                            ; carry_look_ahead_16bit ; work         ;
+;          |carry_look_ahead_4bit:cla1|  ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|magnitude:Zmag|carry_look_ahead_16bit:add16|carry_look_ahead_4bit:cla1 ; carry_look_ahead_4bit  ; work         ;
+;          |carry_look_ahead_4bit:cla2|  ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|magnitude:Zmag|carry_look_ahead_16bit:add16|carry_look_ahead_4bit:cla2 ; carry_look_ahead_4bit  ; work         ;
+;          |carry_look_ahead_4bit:cla3|  ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|magnitude:Zmag|carry_look_ahead_16bit:add16|carry_look_ahead_4bit:cla3 ; carry_look_ahead_4bit  ; work         ;
+;          |carry_look_ahead_4bit:cla4|  ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|magnitude:Zmag|carry_look_ahead_16bit:add16|carry_look_ahead_4bit:cla4 ; carry_look_ahead_4bit  ; work         ;
+;       |singed_multiplier:mul1|         ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |CALU|magnitude:Zmag|singed_multiplier:mul1                                  ; singed_multiplier      ; work         ;
+;       |singed_multiplier:mul2|         ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |CALU|magnitude:Zmag|singed_multiplier:mul2                                  ; singed_multiplier      ; work         ;
+;       |sqrt:sq1|                       ; 139 (139)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|magnitude:Zmag|sqrt:sq1                                                ; sqrt                   ; work         ;
+;    |negate_sign:ns|                    ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CALU|negate_sign:ns                                                         ; negate_sign            ; work         ;
+;    |singed_multiplier:ac|              ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |CALU|singed_multiplier:ac                                                   ; singed_multiplier      ; work         ;
+;    |singed_multiplier:ad|              ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |CALU|singed_multiplier:ad                                                   ; singed_multiplier      ; work         ;
+;    |singed_multiplier:bc|              ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |CALU|singed_multiplier:bc                                                   ; singed_multiplier      ; work         ;
+;    |singed_multiplier:bd|              ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |CALU|singed_multiplier:bd                                                   ; singed_multiplier      ; work         ;
+;    |singed_multiplier:csquare|         ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |CALU|singed_multiplier:csquare                                              ; singed_multiplier      ; work         ;
+;    |singed_multiplier:dsquare|         ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |CALU|singed_multiplier:dsquare                                              ; singed_multiplier      ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -231,11 +285,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+--------------+
 ; Statistic                     ; Number Used  ;
 +-------------------------------+--------------+
-; Two Independent 18x18         ; 2            ;
-; Total number of DSP blocks    ; 2            ;
+; Two Independent 18x18         ; 8            ;
+; Total number of DSP blocks    ; 8            ;
 ;                               ;              ;
-; Fixed Point Signed Multiplier ; 2            ;
+; Fixed Point Signed Multiplier ; 8            ;
 +-------------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; DVFR$latch                                         ; Zout[31]            ; yes                    ;
+; DVFI$latch                                         ; Zout[31]            ; yes                    ;
+; ZER$latch                                          ; Zout[31]            ; yes                    ;
+; ZEI$latch                                          ; Zout[31]            ; yes                    ;
+; Number of user-specified and inferred latches = 4  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -253,8 +321,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 17:1               ; 22 bits   ; 242 LEs       ; 220 LEs              ; 22 LEs                 ; No         ; |CALU|Zout[21]             ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 80 LEs               ; 8 LEs                  ; No         ; |CALU|Zout[3]              ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 18 LEs               ; 4 LEs                  ; No         ; |CALU|ZR                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
 +-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "carry_look_ahead_16bit:add16"                                                                            ;
+; Port Connectivity Checks: "magnitude:Zmag|carry_look_ahead_16bit:add16"                                                             ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                                                  ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
@@ -263,31 +342,119 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Signed_Divider:divImg"                                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Rem  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Signed_Divider:divReal"                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Rem  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "carry_look_ahead_16bit:realPrtdv1"                                                                       ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; cin  ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; cout ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "carry_look_ahead_16bit:imgPrtmul0"                                                                       ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; cin  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; cout ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "carry_look_ahead_16bit:realPrtdv"                                                                        ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; cin  ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; cout ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "carry_look_ahead_16bit:imgPrtmul"                                                                        ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; cin  ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; cout ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "carry_look_ahead_16bit:realPrtmul"                                                                       ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; cin  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; cout ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "adder_subtractor_16bit:ADD_SUB1" ;
++------+-------+----------+-----------------------------------+
+; Port ; Type  ; Severity ; Details                           ;
++------+-------+----------+-----------------------------------+
+; Cin  ; Input ; Info     ; Stuck at GND                      ;
++------+-------+----------+-----------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "adder_subtractor_16bit:ADD_SUB0" ;
++------+-------+----------+-----------------------------------+
+; Port ; Type  ; Severity ; Details                           ;
++------+-------+----------+-----------------------------------+
+; Cin  ; Input ; Info     ; Stuck at GND                      ;
++------+-------+----------+-----------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 182                         ;
-;     arith             ; 126                         ;
-;         1 data inputs ; 31                          ;
-;         2 data inputs ; 26                          ;
-;         3 data inputs ; 28                          ;
-;         4 data inputs ; 14                          ;
-;         5 data inputs ; 27                          ;
-;     normal            ; 56                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 15                          ;
-;         3 data inputs ; 13                          ;
-;         4 data inputs ; 10                          ;
-;         5 data inputs ; 6                           ;
-;         6 data inputs ; 5                           ;
-; arriav_mac            ; 2                           ;
-; boundary_port         ; 48                          ;
+; arriav_lcell_comb     ; 2309                        ;
+;     arith             ; 1302                        ;
+;         0 data inputs ; 34                          ;
+;         1 data inputs ; 120                         ;
+;         2 data inputs ; 32                          ;
+;         3 data inputs ; 119                         ;
+;         4 data inputs ; 458                         ;
+;         5 data inputs ; 539                         ;
+;     extend            ; 33                          ;
+;         7 data inputs ; 33                          ;
+;     normal            ; 974                         ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 117                         ;
+;         3 data inputs ; 470                         ;
+;         4 data inputs ; 77                          ;
+;         5 data inputs ; 71                          ;
+;         6 data inputs ; 237                         ;
+; arriav_mac            ; 8                           ;
+; boundary_port         ; 112                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 21.00                       ;
-; Average LUT depth     ; 17.26                       ;
+; Max LUT depth         ; 67.70                       ;
+; Average LUT depth     ; 50.21                       ;
 +-----------------------+-----------------------------+
 
 
@@ -296,7 +463,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -306,11 +473,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Sep  9 19:54:22 2024
+    Info: Processing started: Fri Sep 13 19:30:33 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CALU -c CALU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 0 design units, including 0 entities, in source file CALU.v
+Info (12021): Found 1 design units, including 1 entities, in source file CALU.v
+    Info (12023): Found entity 1: CALU File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file carry_look_ahead_16bit.v
     Info (12023): Found entity 1: carry_look_ahead_16bit File: /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_16bit.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file carry_look_ahead_4bit.v
@@ -334,33 +502,191 @@ Info (12021): Found 1 design units, including 1 entities, in source file magnitu
     Info (12023): Found entity 1: magnitude File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Testbenches/tb_magnitude.v
     Info (12023): Found entity 1: tb_magnitude File: /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_magnitude.v Line: 1
-Info (12127): Elaborating entity "magnitude" for the top level hierarchy
-Info (12128): Elaborating entity "singed_multiplier" for hierarchy "singed_multiplier:mul1" File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 11
-Info (12128): Elaborating entity "carry_look_ahead_16bit" for hierarchy "carry_look_ahead_16bit:add16" File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 13
-Info (12128): Elaborating entity "carry_look_ahead_4bit" for hierarchy "carry_look_ahead_16bit:add16|carry_look_ahead_4bit:cla1" File: /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_16bit.v Line: 19
-Info (12128): Elaborating entity "sqrt" for hierarchy "sqrt:sq1" File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 14
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "Mag[8]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
-    Warning (13410): Pin "Mag[9]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
-    Warning (13410): Pin "Mag[10]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
-    Warning (13410): Pin "Mag[11]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
-    Warning (13410): Pin "Mag[12]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
-    Warning (13410): Pin "Mag[13]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
-    Warning (13410): Pin "Mag[14]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
-    Warning (13410): Pin "Mag[15]" is stuck at GND File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file adder_subtractor_16bit_with_overflow.v
+    Info (12023): Found entity 1: adder_subtractor_16bit File: /home/muslim/HDD/Comlpex_ALU/adder_subtractor_16bit_with_overflow.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Testbenches/tb_adder_subtractor_16bit_with_overflow.v
+    Info (12023): Found entity 1: tb_adder_subtractor_16bit_with_overflow File: /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_adder_subtractor_16bit_with_overflow.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file negate_sign.v
+    Info (12023): Found entity 1: negate_sign File: /home/muslim/HDD/Comlpex_ALU/negate_sign.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_negate_sign.v
+    Info (12023): Found entity 1: tb_negate_sign File: /home/muslim/HDD/Comlpex_ALU/tb_negate_sign.v Line: 3
+Info (12127): Elaborating entity "CALU" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at CALU.v(154): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 154
+Warning (10230): Verilog HDL assignment warning at CALU.v(155): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 155
+Warning (10230): Verilog HDL assignment warning at CALU.v(169): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 169
+Warning (10230): Verilog HDL assignment warning at CALU.v(170): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 170
+Warning (10230): Verilog HDL assignment warning at CALU.v(185): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 185
+Warning (10230): Verilog HDL assignment warning at CALU.v(186): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 186
+Warning (10230): Verilog HDL assignment warning at CALU.v(200): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 200
+Warning (10230): Verilog HDL assignment warning at CALU.v(201): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 201
+Warning (10230): Verilog HDL assignment warning at CALU.v(216): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 216
+Warning (10230): Verilog HDL assignment warning at CALU.v(217): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 217
+Warning (10230): Verilog HDL assignment warning at CALU.v(231): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 231
+Warning (10230): Verilog HDL assignment warning at CALU.v(232): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 232
+Warning (10230): Verilog HDL assignment warning at CALU.v(246): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 246
+Warning (10230): Verilog HDL assignment warning at CALU.v(247): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 247
+Warning (10230): Verilog HDL assignment warning at CALU.v(262): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 262
+Warning (10230): Verilog HDL assignment warning at CALU.v(263): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 263
+Warning (10230): Verilog HDL assignment warning at CALU.v(278): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 278
+Warning (10230): Verilog HDL assignment warning at CALU.v(279): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 279
+Warning (10230): Verilog HDL assignment warning at CALU.v(293): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 293
+Warning (10230): Verilog HDL assignment warning at CALU.v(294): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 294
+Warning (10230): Verilog HDL assignment warning at CALU.v(308): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 308
+Warning (10230): Verilog HDL assignment warning at CALU.v(309): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 309
+Warning (10230): Verilog HDL assignment warning at CALU.v(324): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 324
+Warning (10230): Verilog HDL assignment warning at CALU.v(325): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 325
+Warning (10230): Verilog HDL assignment warning at CALU.v(340): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 340
+Warning (10230): Verilog HDL assignment warning at CALU.v(341): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 341
+Warning (10230): Verilog HDL assignment warning at CALU.v(358): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 358
+Warning (10230): Verilog HDL assignment warning at CALU.v(359): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 359
+Warning (10230): Verilog HDL assignment warning at CALU.v(374): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 374
+Warning (10230): Verilog HDL assignment warning at CALU.v(375): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 375
+Warning (10230): Verilog HDL assignment warning at CALU.v(390): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 390
+Warning (10230): Verilog HDL assignment warning at CALU.v(391): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 391
+Warning (10230): Verilog HDL assignment warning at CALU.v(407): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 407
+Warning (10230): Verilog HDL assignment warning at CALU.v(408): truncated value with size 32 to match size of target (1) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 408
+Warning (10240): Verilog HDL Always Construct warning at CALU.v(146): inferring latch(es) for variable "Zout", which holds its previous value in one or more paths through the always construct File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 146
+Warning (10240): Verilog HDL Always Construct warning at CALU.v(146): inferring latch(es) for variable "CR", which holds its previous value in one or more paths through the always construct File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 146
+Warning (10240): Verilog HDL Always Construct warning at CALU.v(146): inferring latch(es) for variable "CI", which holds its previous value in one or more paths through the always construct File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 146
+Warning (10240): Verilog HDL Always Construct warning at CALU.v(146): inferring latch(es) for variable "DVFR", which holds its previous value in one or more paths through the always construct File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 146
+Warning (10240): Verilog HDL Always Construct warning at CALU.v(146): inferring latch(es) for variable "DVFI", which holds its previous value in one or more paths through the always construct File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 146
+Warning (10240): Verilog HDL Always Construct warning at CALU.v(146): inferring latch(es) for variable "ZER", which holds its previous value in one or more paths through the always construct File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 146
+Warning (10240): Verilog HDL Always Construct warning at CALU.v(146): inferring latch(es) for variable "ZEI", which holds its previous value in one or more paths through the always construct File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 146
+Warning (10240): Verilog HDL Always Construct warning at CALU.v(146): inferring latch(es) for variable "ZR", which holds its previous value in one or more paths through the always construct File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 146
+Warning (10240): Verilog HDL Always Construct warning at CALU.v(146): inferring latch(es) for variable "ZI", which holds its previous value in one or more paths through the always construct File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 146
+Warning (10240): Verilog HDL Always Construct warning at CALU.v(146): inferring latch(es) for variable "OR", which holds its previous value in one or more paths through the always construct File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 146
+Warning (10240): Verilog HDL Always Construct warning at CALU.v(146): inferring latch(es) for variable "OI", which holds its previous value in one or more paths through the always construct File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 146
+Warning (10240): Verilog HDL Always Construct warning at CALU.v(146): inferring latch(es) for variable "NR", which holds its previous value in one or more paths through the always construct File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 146
+Warning (10240): Verilog HDL Always Construct warning at CALU.v(146): inferring latch(es) for variable "NI", which holds its previous value in one or more paths through the always construct File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 146
+Info (10041): Inferred latch for "NI" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "NR" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "OI" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "OR" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "ZI" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "ZR" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "ZEI" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "ZER" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "DVFI" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "DVFR" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "CI" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "CR" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[0]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[1]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[2]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[3]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[4]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[5]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[6]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[7]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[8]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[9]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[10]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[11]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[12]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[13]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[14]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[15]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[16]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[17]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[18]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[19]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[20]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[21]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[22]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[23]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[24]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[25]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[26]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[27]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[28]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[29]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[30]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (10041): Inferred latch for "Zout[31]" at CALU.v(161) File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Info (12128): Elaborating entity "adder_subtractor_16bit" for hierarchy "adder_subtractor_16bit:ADD_SUB0" File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 44
+Info (12128): Elaborating entity "singed_multiplier" for hierarchy "singed_multiplier:ac" File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 52
+Info (12128): Elaborating entity "carry_look_ahead_16bit" for hierarchy "carry_look_ahead_16bit:realPrtmul" File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 56
+Info (12128): Elaborating entity "carry_look_ahead_4bit" for hierarchy "carry_look_ahead_16bit:realPrtmul|carry_look_ahead_4bit:cla1" File: /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_16bit.v Line: 19
+Info (12128): Elaborating entity "Signed_Divider" for hierarchy "Signed_Divider:divReal" File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 73
+Warning (10230): Verilog HDL assignment warning at Signed_Divider.v(24): truncated value with size 32 to match size of target (16) File: /home/muslim/HDD/Comlpex_ALU/Signed_Divider.v Line: 24
+Warning (10230): Verilog HDL assignment warning at Signed_Divider.v(27): truncated value with size 32 to match size of target (16) File: /home/muslim/HDD/Comlpex_ALU/Signed_Divider.v Line: 27
+Warning (10230): Verilog HDL assignment warning at Signed_Divider.v(44): truncated value with size 32 to match size of target (16) File: /home/muslim/HDD/Comlpex_ALU/Signed_Divider.v Line: 44
+Warning (10230): Verilog HDL assignment warning at Signed_Divider.v(45): truncated value with size 32 to match size of target (16) File: /home/muslim/HDD/Comlpex_ALU/Signed_Divider.v Line: 45
+Warning (10230): Verilog HDL assignment warning at Signed_Divider.v(47): truncated value with size 32 to match size of target (16) File: /home/muslim/HDD/Comlpex_ALU/Signed_Divider.v Line: 47
+Warning (10230): Verilog HDL assignment warning at Signed_Divider.v(51): truncated value with size 32 to match size of target (16) File: /home/muslim/HDD/Comlpex_ALU/Signed_Divider.v Line: 51
+Info (12128): Elaborating entity "magnitude" for hierarchy "magnitude:Zmag" File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 79
+Info (12128): Elaborating entity "sqrt" for hierarchy "magnitude:Zmag|sqrt:sq1" File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 13
+Info (12128): Elaborating entity "negate_sign" for hierarchy "negate_sign:ns" File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 102
+Warning (14026): LATCH primitive "Zout[0]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[1]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[2]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[3]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[4]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[5]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[6]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[7]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[8]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[9]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[10]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[11]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[12]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[13]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[14]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[15]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[16]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[17]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[18]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[19]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[20]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[21]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[22]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[23]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[24]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[25]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[26]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[27]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[28]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[29]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[30]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "Zout[31]$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "CR$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "CI$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "ZR$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "ZI$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "OR$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "OI$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "NR$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (14026): LATCH primitive "NI$latch" is permanently enabled File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "ZEI$latch" merged with LATCH primitive "ZER$latch" File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+Warning (13012): Latch DVFR$latch has unsafe behavior File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Opcode[0] File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 18
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal Opcode[3] File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 18
+Warning (13012): Latch DVFI$latch has unsafe behavior File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Opcode[0] File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 18
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal Opcode[3] File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 18
+Warning (13012): Latch ZER$latch has unsafe behavior File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 161
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Opcode[0] File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 18
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal Opcode[3] File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 18
 Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file /home/muslim/HDD/Comlpex_ALU/output_files/CALU.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 225 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 32 input pins
-    Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 175 logic cells
-    Info (21062): Implemented 2 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 468 megabytes
-    Info: Processing ended: Mon Sep  9 19:54:36 2024
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:29
+Info (21057): Implemented 2427 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 68 input pins
+    Info (21059): Implemented 44 output pins
+    Info (21061): Implemented 2307 logic cells
+    Info (21062): Implemented 8 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 105 warnings
+    Info: Peak virtual memory: 489 megabytes
+    Info: Processing ended: Fri Sep 13 19:30:51 2024
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:33
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/muslim/HDD/Comlpex_ALU/output_files/CALU.map.smsg.
 
 

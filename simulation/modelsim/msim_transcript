@@ -8,118 +8,160 @@
 # vmap work rtl_work 
 # Modifying /home/muslim/HDD/Quartus/modelsim_ase/linuxaloem/../modelsim.ini
 # 
+# vlog -vlog01compat -work work +incdir+/home/muslim/HDD/Comlpex_ALU {/home/muslim/HDD/Comlpex_ALU/CALU.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:35:53 on Sep 13,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/muslim/HDD/Comlpex_ALU" /home/muslim/HDD/Comlpex_ALU/CALU.v 
+# -- Compiling module CALU
+# 
+# Top level modules:
+# 	CALU
+# End time: 19:35:53 on Sep 13,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/muslim/HDD/Comlpex_ALU {/home/muslim/HDD/Comlpex_ALU/carry_look_ahead_16bit.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:54:47 on Sep 09,2024
+# Start time: 19:35:53 on Sep 13,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/muslim/HDD/Comlpex_ALU" /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_16bit.v 
 # -- Compiling module carry_look_ahead_16bit
 # 
 # Top level modules:
 # 	carry_look_ahead_16bit
-# End time: 19:54:47 on Sep 09,2024, Elapsed time: 0:00:00
+# End time: 19:35:53 on Sep 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/muslim/HDD/Comlpex_ALU {/home/muslim/HDD/Comlpex_ALU/carry_look_ahead_4bit.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:54:47 on Sep 09,2024
+# Start time: 19:35:53 on Sep 13,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/muslim/HDD/Comlpex_ALU" /home/muslim/HDD/Comlpex_ALU/carry_look_ahead_4bit.v 
 # -- Compiling module carry_look_ahead_4bit
 # 
 # Top level modules:
 # 	carry_look_ahead_4bit
-# End time: 19:54:48 on Sep 09,2024, Elapsed time: 0:00:01
+# End time: 19:35:53 on Sep 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/muslim/HDD/Comlpex_ALU {/home/muslim/HDD/Comlpex_ALU/singed_multiplier.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:54:48 on Sep 09,2024
+# Start time: 19:35:53 on Sep 13,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/muslim/HDD/Comlpex_ALU" /home/muslim/HDD/Comlpex_ALU/singed_multiplier.v 
 # -- Compiling module singed_multiplier
 # 
 # Top level modules:
 # 	singed_multiplier
-# End time: 19:54:48 on Sep 09,2024, Elapsed time: 0:00:00
+# End time: 19:35:54 on Sep 13,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/muslim/HDD/Comlpex_ALU {/home/muslim/HDD/Comlpex_ALU/Signed_Divider.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:35:54 on Sep 13,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/muslim/HDD/Comlpex_ALU" /home/muslim/HDD/Comlpex_ALU/Signed_Divider.v 
+# -- Compiling module Signed_Divider
+# 
+# Top level modules:
+# 	Signed_Divider
+# End time: 19:35:54 on Sep 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/muslim/HDD/Comlpex_ALU {/home/muslim/HDD/Comlpex_ALU/sqrt_16bit.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:54:48 on Sep 09,2024
+# Start time: 19:35:54 on Sep 13,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/muslim/HDD/Comlpex_ALU" /home/muslim/HDD/Comlpex_ALU/sqrt_16bit.v 
 # -- Compiling module sqrt
 # 
 # Top level modules:
 # 	sqrt
-# End time: 19:54:48 on Sep 09,2024, Elapsed time: 0:00:00
+# End time: 19:35:54 on Sep 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/muslim/HDD/Comlpex_ALU {/home/muslim/HDD/Comlpex_ALU/magnitude.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:54:48 on Sep 09,2024
+# Start time: 19:35:54 on Sep 13,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/muslim/HDD/Comlpex_ALU" /home/muslim/HDD/Comlpex_ALU/magnitude.v 
 # -- Compiling module magnitude
 # 
 # Top level modules:
 # 	magnitude
-# End time: 19:54:48 on Sep 09,2024, Elapsed time: 0:00:00
+# End time: 19:35:54 on Sep 13,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/muslim/HDD/Comlpex_ALU {/home/muslim/HDD/Comlpex_ALU/adder_subtractor_16bit_with_overflow.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:35:54 on Sep 13,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/muslim/HDD/Comlpex_ALU" /home/muslim/HDD/Comlpex_ALU/adder_subtractor_16bit_with_overflow.v 
+# -- Compiling module adder_subtractor_16bit
+# 
+# Top level modules:
+# 	adder_subtractor_16bit
+# End time: 19:35:54 on Sep 13,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/muslim/HDD/Comlpex_ALU {/home/muslim/HDD/Comlpex_ALU/negate_sign.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:35:54 on Sep 13,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/muslim/HDD/Comlpex_ALU" /home/muslim/HDD/Comlpex_ALU/negate_sign.v 
+# -- Compiling module negate_sign
+# 
+# Top level modules:
+# 	negate_sign
+# End time: 19:35:54 on Sep 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # 
 # stdin: <EOF>
-vlog -reportprogress 300 -work work /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_magnitude.v
+vlog -reportprogress 300 -work work /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_CALU.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:55:09 on Sep 09,2024
-# vlog -reportprogress 300 -work work /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_magnitude.v 
-# -- Compiling module tb_magnitude
+# Start time: 19:36:18 on Sep 13,2024
+# vlog -reportprogress 300 -work work /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_CALU.v 
+# -- Compiling module tb_CALU
 # 
 # Top level modules:
-# 	tb_magnitude
-# End time: 19:55:09 on Sep 09,2024, Elapsed time: 0:00:00
+# 	tb_CALU
+# End time: 19:36:18 on Sep 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vsim work.tb_magnitude
-# vsim work.tb_magnitude 
-# Start time: 19:55:12 on Sep 09,2024
-# Loading work.tb_magnitude
-# Loading work.magnitude
+vsim work.tb_CALU
+# vsim work.tb_CALU 
+# Start time: 19:36:22 on Sep 13,2024
+# Loading work.tb_CALU
+# Loading work.CALU
+# Loading work.adder_subtractor_16bit
 # Loading work.singed_multiplier
 # Loading work.carry_look_ahead_16bit
 # Loading work.carry_look_ahead_4bit
-# Loading work.sqrt
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'add16'.  Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_magnitude/uut/add16 File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 13
-# ** Warning: (vsim-3722) /home/muslim/HDD/Comlpex_ALU/magnitude.v(13): [TFMPC] - Missing connection for port 'cout'.
-add wave -position insertpoint sim:/tb_magnitude/*
-run
-# Testing magnitude calculation...
-# Test Case 1: Real =     3, Imaginary =     4, Magnitude =     5
-# Test Case 2: Real =     5, Imaginary =    12, Magnitude =    13
-# Test Case 3: Real =     8, Imaginary =     6, Magnitude =    10
-# Test Case 4: Real =     0, Imaginary =     0, Magnitude =     0
-# Test Case 5: Real = 32767, Imaginary = 32767, Magnitude =     1
-# ** Note: $finish    : /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_magnitude.v(51)
-#    Time: 50 ps  Iteration: 0  Instance: /tb_magnitude
-# 1
-# Break in Module tb_magnitude at /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_magnitude.v line 51
-vsim work.tb_magnitude
-# End time: 19:56:43 on Sep 09,2024, Elapsed time: 0:01:31
-# Errors: 0, Warnings: 2
-# vsim work.tb_magnitude 
-# Start time: 19:56:43 on Sep 09,2024
-# Loading work.tb_magnitude
+# Loading work.Signed_Divider
 # Loading work.magnitude
-# Loading work.singed_multiplier
-# Loading work.carry_look_ahead_16bit
-# Loading work.carry_look_ahead_4bit
 # Loading work.sqrt
+# Loading work.negate_sign
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'realPrtmul'.  Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CALU/uut/realPrtmul File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 56
+# ** Warning: (vsim-3722) /home/muslim/HDD/Comlpex_ALU/CALU.v(56): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'imgPrtmul'.  Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CALU/uut/imgPrtmul File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 57
+# ** Warning: (vsim-3722) /home/muslim/HDD/Comlpex_ALU/CALU.v(57): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'realPrtdv'.  Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CALU/uut/realPrtdv File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 68
+# ** Warning: (vsim-3722) /home/muslim/HDD/Comlpex_ALU/CALU.v(68): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'imgPrtmul0'.  Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CALU/uut/imgPrtmul0 File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 69
+# ** Warning: (vsim-3722) /home/muslim/HDD/Comlpex_ALU/CALU.v(69): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'realPrtdv1'.  Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CALU/uut/realPrtdv1 File: /home/muslim/HDD/Comlpex_ALU/CALU.v Line: 72
+# ** Warning: (vsim-3722) /home/muslim/HDD/Comlpex_ALU/CALU.v(72): [TFMPC] - Missing connection for port 'cout'.
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'add16'.  Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_magnitude/uut/add16 File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 13
-# ** Warning: (vsim-3722) /home/muslim/HDD/Comlpex_ALU/magnitude.v(13): [TFMPC] - Missing connection for port 'cout'.
-add wave -position insertpoint sim:/tb_magnitude/uut/*
+#    Time: 0 ps  Iteration: 0  Instance: /tb_CALU/uut/Zmag/add16 File: /home/muslim/HDD/Comlpex_ALU/magnitude.v Line: 12
+# ** Warning: (vsim-3722) /home/muslim/HDD/Comlpex_ALU/magnitude.v(12): [TFMPC] - Missing connection for port 'cout'.
+add wave -position insertpoint sim:/tb_CALU/*
 run
-# Testing magnitude calculation...
-# Test Case 1: Real =     3, Imaginary =     4, Magnitude =     5
-# Test Case 2: Real =     5, Imaginary =    12, Magnitude =    13
-# Test Case 3: Real =     8, Imaginary =     6, Magnitude =    10
-# Test Case 4: Real =     0, Imaginary =     0, Magnitude =     0
-# Test Case 5: Real = 32767, Imaginary = 32767, Magnitude =     1
-# ** Note: $finish    : /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_magnitude.v(51)
-#    Time: 50 ps  Iteration: 0  Instance: /tb_magnitude
+# Time: 0 | Opcode: 0000 | Z1: 00010001 | Z2: 00020002 | Zout: 00030003 | RealPart: 0003 | ImagPart: 0003 | CR: 0 | CI: 0 | DVFR: 0 | DVFI: 0 | ZER: 0 | ZEI: 0 | ZR: 0 | ZI: 0 | OR: 0 | OI: 0 | NR: 0 | NI: 0
+# Time: 10 | Opcode: 0001 | Z1: 00010001 | Z2: 00020002 | Zout: ffffffff | RealPart: ffff | ImagPart: ffff | CR: 0 | CI: 0 | DVFR: 0 | DVFI: 0 | ZER: 0 | ZEI: 0 | ZR: 0 | ZI: 0 | OR: 0 | OI: 0 | NR: 1 | NI: 1
+# Time: 20 | Opcode: 0010 | Z1: 00010001 | Z2: 00020002 | Zout: 00000004 | RealPart: 0000 | ImagPart: 0004 | CR: 0 | CI: 0 | DVFR: 0 | DVFI: 0 | ZER: 0 | ZEI: 0 | ZR: 1 | ZI: 0 | OR: 0 | OI: 0 | NR: 0 | NI: 0
+# Time: 30 | Opcode: 0011 | Z1: 00010001 | Z2: 00020002 | Zout: 00000000 | RealPart: 0000 | ImagPart: 0000 | CR: 0 | CI: 0 | DVFR: 1 | DVFI: 1 | ZER: 0 | ZEI: 0 | ZR: 1 | ZI: 1 | OR: 0 | OI: 0 | NR: 0 | NI: 0
+# Time: 40 | Opcode: 0100 | Z1: 00010001 | Z2: 00020002 | Zout: 00000001 | RealPart: 0000 | ImagPart: 0001 | CR: 0 | CI: 0 | DVFR: 0 | DVFI: 0 | ZER: 0 | ZEI: 0 | ZR: 1 | ZI: 1 | OR: 0 | OI: 0 | NR: 0 | NI: 0
+# Time: 50 | Opcode: 0101 | Z1: 00010001 | Z2: 00020002 | Zout: 00000000 | RealPart: 0000 | ImagPart: 0000 | CR: 0 | CI: 0 | DVFR: 0 | DVFI: 0 | ZER: 0 | ZEI: 0 | ZR: 1 | ZI: 1 | OR: 0 | OI: 0 | NR: 0 | NI: 0
+# Time: 60 | Opcode: 0110 | Z1: 00010001 | Z2: 00020002 | Zout: 00030003 | RealPart: 0003 | ImagPart: 0003 | CR: 0 | CI: 0 | DVFR: 0 | DVFI: 0 | ZER: 0 | ZEI: 0 | ZR: 0 | ZI: 0 | OR: 0 | OI: 0 | NR: 0 | NI: 0
+# Time: 70 | Opcode: 0111 | Z1: 00010001 | Z2: 00020002 | Zout: fffefffe | RealPart: fffe | ImagPart: fffe | CR: 0 | CI: 0 | DVFR: 0 | DVFI: 0 | ZER: 0 | ZEI: 0 | ZR: 0 | ZI: 0 | OR: 0 | OI: 0 | NR: 1 | NI: 1
+# Time: 80 | Opcode: 1000 | Z1: 00010001 | Z2: 00020002 | Zout: 00030003 | RealPart: 0003 | ImagPart: 0003 | CR: 0 | CI: 0 | DVFR: 0 | DVFI: 0 | ZER: 0 | ZEI: 0 | ZR: 0 | ZI: 0 | OR: 0 | OI: 0 | NR: 0 | NI: 0
+# Time: 90 | Opcode: 1001 | Z1: 00010001 | Z2: 00020002 | Zout: fffcfffc | RealPart: fffc | ImagPart: fffc | CR: 0 | CI: 0 | DVFR: 0 | DVFI: 0 | ZER: 0 | ZEI: 0 | ZR: 0 | ZI: 0 | OR: 0 | OI: 0 | NR: 1 | NI: 1
+run
+# Time: 100 | Opcode: 1010 | Z1: 00010001 | Z2: 00020002 | Zout: ffffffff | RealPart: ffff | ImagPart: ffff | CR: 0 | CI: 0 | DVFR: 0 | DVFI: 0 | ZER: 0 | ZEI: 0 | ZR: 0 | ZI: 0 | OR: 0 | OI: 0 | NR: 1 | NI: 1
+# Time: 110 | Opcode: 1011 | Z1: 00010001 | Z2: 00020002 | Zout: fffcfffc | RealPart: fffc | ImagPart: fffc | CR: 0 | CI: 0 | DVFR: 0 | DVFI: 0 | ZER: 0 | ZEI: 0 | ZR: 0 | ZI: 0 | OR: 0 | OI: 0 | NR: 1 | NI: 1
+# Time: 120 | Opcode: 1100 | Z1: 00010001 | Z2: 00020002 | Zout: 00020002 | RealPart: 0002 | ImagPart: 0002 | CR: 0 | CI: 0 | DVFR: 0 | DVFI: 0 | ZER: 0 | ZEI: 0 | ZR: 0 | ZI: 0 | OR: 0 | OI: 0 | NR: 0 | NI: 0
+# Time: 130 | Opcode: 1101 | Z1: 00010001 | Z2: 00020002 | Zout: 00000000 | RealPart: 0000 | ImagPart: 0000 | CR: 0 | CI: 0 | DVFR: 0 | DVFI: 0 | ZER: 0 | ZEI: 0 | ZR: 1 | ZI: 1 | OR: 0 | OI: 0 | NR: 0 | NI: 0
+# Time: 140 | Opcode: 1110 | Z1: 00010001 | Z2: 00020002 | Zout: 00010001 | RealPart: 0001 | ImagPart: 0001 | CR: 0 | CI: 0 | DVFR: 0 | DVFI: 0 | ZER: 0 | ZEI: 0 | ZR: 0 | ZI: 0 | OR: 0 | OI: 0 | NR: 0 | NI: 0
+# Time: 150 | Opcode: 1111 | Z1: 00010001 | Z2: 00020002 | Zout: 0001ffff | RealPart: 0001 | ImagPart: ffff | CR: 0 | CI: 0 | DVFR: 0 | DVFI: 0 | ZER: 0 | ZEI: 0 | ZR: 0 | ZI: 0 | OR: 0 | OI: 0 | NR: 0 | NI: 1
+# ** Note: $finish    : /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_CALU.v(116)
+#    Time: 160 ps  Iteration: 0  Instance: /tb_CALU
 # 1
-# Break in Module tb_magnitude at /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_magnitude.v line 51
-# End time: 19:58:05 on Sep 09,2024, Elapsed time: 0:01:22
-# Errors: 0, Warnings: 2
+# Break in Module tb_CALU at /home/muslim/HDD/Comlpex_ALU/Testbenches/tb_CALU.v line 116
