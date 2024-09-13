@@ -8,7 +8,6 @@ Instruction format is described in the following figure. Where `Z1` and `Z2` are
 A Complex Arithmetic Logic Unit (CALU) processes two 32-bit numbers, which are divided into their real and imaginary components for complex arithmetic operations. Based on the results of the ALU, flags are set accordingly. R_Flags and I_Flags are the flags corresponding to the real and imaginary part of the CALU output.
 ![Alt text](output_files/CALU.jpeg)
 
-### Instructions
 
 ## CALU Instructions Table
 
